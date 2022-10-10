@@ -21,6 +21,11 @@ class MainController extends Controller
 
     public function review_check(Request $request)
     {
-        dd($request);
+        $valid = $request->validate([
+            'email' => 'required|min::4|max:100',
+            'subject' => 'required|min::4|max:100',
+            'message' => 'required|min::15|max:500'
+        ]);
+        // dd($request);
     }
 }
