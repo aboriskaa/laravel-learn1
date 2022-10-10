@@ -20,4 +20,15 @@
         <textarea name="message" id="message" placeholder="Enter your message" class="form-control"></textarea><br>
         <button type="submit" class="btn btn-success">OK</button>
     </form>
+    @if ($reviews)
+        <h1></h1>
+        @foreach ($reviews as $el)
+            <div class="alert alert-warning">
+                <h3>{{ $el->subject }}</h3>
+                <b>{{ $el->message }}</b>
+                <p>{{ $el->email }}</p>
+            </div>
+        @endforeach
+    @endif
+
 @endsection
